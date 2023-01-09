@@ -11,6 +11,12 @@ const configureGetOptions = (url: string, auth: Auth): any => {
   if (auth.oauth && auth.oauth.private_key && auth.oauth.token) {
     const oauth = auth.oauth;
     Object.assign(options, { oauth });
+  } else if (auth.personal_token) {
+    // Handle Personal Token
+    const headers = {
+      Authorization: `Bearer ${new Buffer(auth.personal_token).toString()}`,
+    };
+    Object.assign(options, { headers });
   } else if (auth.username && auth.password) {
     // Handle Basic Auth
     const headers = {

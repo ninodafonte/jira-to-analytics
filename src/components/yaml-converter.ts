@@ -43,6 +43,7 @@ const convertYamlToJiraSettings = (config: any): JiraExtractorConfig => {
     auth: {
       username: config.Connection.Username || null,
       password: config.Connection.Password || null,
+      personal_token: config.Connection["Personal Token"] || null,
       oauth: buildOAuth(config.Connection) || null,
     }
   };

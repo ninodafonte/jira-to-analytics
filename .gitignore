@@ -13,3 +13,6 @@ tmp
 *.exe
 *.linux
 jira-to-analytics.js
+/.idea/
+/config-*
+/output-*

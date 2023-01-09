@@ -69,6 +69,7 @@ export interface Teams {
 export interface Auth {
   username?: string;
   password?: string;
+  personal_token?: string;
   oauth?: {
     consumer_key: string;
     private_key: string,
